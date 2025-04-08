@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="gacha.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body id="homework-body">
+
+    <!-- AUDIO -->
+
+    <!-- <button type="button" onclick="play()" class='play' id="intro-audio-button">
+        <img src="./resources/Background/volume_on.png" id="volume-icon" alt="Volume">
+    </button> -->
+    <audio id="attack-audio" style="display: none;" loop>
+        <source src="./resources/Music/Fighttheme.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    
+
+    <!-- GO BACK HOME -->
+    <button type="button" onclick="location.href='home.html'" id="home-icon-button">
+        <img src="resources/Background/homeicon.jpg" alt="homeicon" id="home-icon">
+    </button>
+
+    
+
+    <div id="fight-container">
+        <div>
+            <div id="display-player-container" class="display-container"></div>
+            <iv id="display-weapon-container-2" class="display-container"></iv>
+            <div id="character-status" class="status">
+                <div id="player-hp-bar-container">
+                    <div id="player-hp-bar" style="background-color: green; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <div id="display-boss-container" class="display-container"></div>
+            <div id="boss-status" class="status">
+                <div id="boss-hp-bar-container">
+                    <div id="boss-hp-bar" style="background-color: red; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div id="info">
+        AGGRESSIVELY press <strong>J</strong> to attack.
+    </div>
+
+    <!-- Popup for Game Result -->
+    <div id="game-result-modal" style="display: none;">
+        <div>
+            <h2 id="game-result-message"></h2>
+            <button onclick="window.location.href='level.html'">Return Home</button>
+        </div>
+    </div>
+
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     player.loadState();  // Load player state from localStorage
+        //     team.loadState();
+        //     console.log(team);
+        //     player.displayStatus();  // Update UI based on loaded data
+        // });
+    </script>
+    <script src="battle.js"></script>
+    <script src="eventlistener.js" defer></script>
+
+</body>
+</html>

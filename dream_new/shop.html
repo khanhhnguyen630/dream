@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="gacha.js"></script>
+    <script src="script.js" defer></script>
+    
+</head>
+<body id="shop-body">
+    <video autoplay loop muted id="shop-background">
+        <source src="./resources/Background/shopbackground.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- AUDIO -->
+
+    <!-- <audio id="background-music" src="resources/Music/Inventory.mp3" preload="auto"></audio> -->
+    <audio id="typing-sound" src="resources/Music/typingSfx.mp3" preload="auto"></audio>
+
+    <button type="button" onclick="play()" class='play' id="intro-audio-button">
+        <img src="./resources/Background/volume_on.png" id="volume-icon" alt="Volume">
+    </button>
+    <audio id="intro-audio" style="display: none;" loop>
+        <source src="./resources/Music/Shopsong.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+    </audio>
+
+    <!-- GO BACK HOME -->
+    <button type="button" onclick="location.href='home.html'" id="home-icon-button">
+        <img src="resources/Background/homeicon.jpg" alt="homeicon" id="home-icon">
+    </button>
+
+    <!-- DISPLAY GEM -->
+    <p id="gems-count"></p>
+    
+    <!-- PULL BUTTON -->
+    <div id="shop-message">
+        <p>Would you like to commit to this scam? Spend 10 gems to obtain 5 random propaganda!</p>
+        <button type="button" onclick="pull()" id="buy-button">
+            <img src="resources/Background/commit.png" alt="commit">
+        </button>    
+    </div>
+
+    <div id="display-inventory">
+    </div>
+
+    <button onclick="removeFromInventory()">Confirm Removal</button>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            player.loadState();  // Load player state from localStorage
+            player.displayStatus();  // Update UI based on loaded data
+            player.displayGemCount();
+        });
+    </script>
+</body>
+</html>

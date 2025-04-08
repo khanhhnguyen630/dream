@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="initialize()" id="home-body">
+    <div id="story-container">
+        <p id="story-intro">You have to play in full screen mode
+            <br>Make sure to turn music on every time 
+            (it's not turned on automatically)
+            <br>Tap space when you're ready  to enter your dream...
+        </p>
+        <div id="story" onclick="nextPart()"></div>
+    </div>
+
+    <!-- AUDIO -->
+    <!-- <button type="button" onclick="play()" class='play' id="intro-audio-button">
+        <img src="./resources/Background/volume_on.png" id="volume-icon" alt="Volume">
+    </button>
+    <audio id="intro-audio" style="display: none;" loop>
+        <source src="./resources/Music/Inventory.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+    </audio> -->
+
+    <!-- <audio id="background-music" src="resources/Music/Inventory.mp3" preload="auto"></audio> -->
+    <audio id="typing-sound" src="resources/Music/typingSfx.mp3" preload="auto"></audio>
+
+    <!-- <script>
+        const music = document.getElementById('background-music');
+        music.play();
+    </script> -->
+    <script src="gacha.js"></script>
+    <script src="script.js" defer></script>
+    <script src="eventlistener.js" defer></script>
+</body>
+</html>

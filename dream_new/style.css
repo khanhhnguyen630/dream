@@ -1,0 +1,487 @@
+@font-face {
+    font-family: mainFont;
+    src: url(./resources/Font/Warioland4chmc-VApe.ttf);
+}
+
+@media (max-width: 768px) {
+    #fight-container {
+        flex-direction: column; /* Stacks flex items vertically */
+    }
+}
+
+html {
+    background-color: black;
+    color: bisque;
+    font-family: mainFont;
+    font-size: 30px;
+}
+
+.float-left {
+    float: left;
+}
+
+input {
+    font-size: 30px;
+    font-family: 'mainFont';
+}
+
+button {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+button#home-icon-button {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    top: 5%;
+    left: 3%;
+}
+
+button#home-icon-button img{
+    width: 80px;
+    height: auto;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/**************************** STORY PAGE ****************************/
+
+#story-container {
+    padding: 15% 15% 0;
+}
+
+#name-input {
+    background-color: black;
+    color: bisque;
+    border: none;
+    margin: 5vh 30% 0vh;
+}
+
+#submit-name {
+    margin: 0vh 10vw;
+}
+
+button#submit-name {
+    cursor: pointer;
+}
+
+#name-submission-button {
+    width: 47vh;
+    height: auto;
+}
+
+/* Apply this class to the body or a container element when ready to fade out */
+.fade-out {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards; /* Keeps the element in the state of the last animation frame */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+} 
+  
+
+/**************************** HOME PAGE ****************************/ 
+
+
+#home-body {
+    box-sizing: border-box;
+    margin: 0 12% 0 12%;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+
+#mainmenu-video {
+    width: auto;
+    height: 100%;
+    display: block;
+}
+
+button#intro-audio-button {
+    position: absolute;
+    top: 20px; /* Distance from the top of the video */
+    right: 10%; /* Distance from the right side of the video */
+    background: none; /* Removes any default styling */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Changes cursor on hover */
+    z-index: 10; /* Ensures the button is above the video */
+}
+
+button#intro-audio-button img {
+    width: 50px; /* Adjust the size of your icon */
+    height: auto;
+}
+
+.home-icon-button img {
+    width: 35vh; 
+    height: auto;
+}
+
+button#bag-button {
+    position: absolute;
+    bottom: 11vh; /* Distance from the top of the video */
+    left: 16vw; /* Distance from the right side of the video */
+    background: none; /* Removes any default styling */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Changes cursor on hover */
+    z-index: 10; /* Ensures the button is above the video */
+}
+
+button#fight-button {
+    position: absolute;
+    bottom: 11vh; /* Distance from the top of the video */
+    left: 43vw; /* Distance from the right side of the video */
+    background: none; /* Removes any default styling */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Changes cursor on hover */
+    z-index: 10; /* Ensures the button is above the video */
+}
+
+button#shop-button {
+    position: absolute;
+    bottom: 11vh; /* Distance from the top of the video */
+    right: 9vw; /* Distance from the right side of the video */
+    background: none; /* Removes any default styling */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Changes cursor on hover */
+    z-index: 10; /* Ensures the button is above the video */
+}
+
+/**************************** GACHA MARKET ****************************/
+#shop-body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(16, 16, 16);
+    animation: fadeIn 3s ease forwards;
+}
+
+#shop-background {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#buy-button {
+    color: bisque;
+    position: absolute;
+    z-index: 10;
+    left: 32vw;
+    bottom: 5%;
+}
+
+#buy-button img {
+    width: 150px;
+    height: auto;
+}
+
+#gems-count {
+    font-size: 80px;
+    color: black;
+    position: absolute;
+    z-index: 10;
+    right: 29%;
+    bottom: 31.5%;
+    font-style: bold;
+}
+
+#display-inventory {
+    position: absolute;
+    z-index: 10;
+    right: 10%;
+    top: 6%;
+    border: white;
+}
+
+.item-container {
+    align-items: left;
+}
+
+#shop-message {
+    position: absolute; /* Change to 'fixed' to keep it visible on the screen at all times */
+    z-index: 200; /* Increase z-index to ensure it's above all other content */
+    top: 60%; /* Center vertically */
+    /* left: 3%; Adjust the position to truly center based on its size */
+    padding: 5% 5% 5% 2%;
+    margin: 0px 20vw 0 0; /* Centering horizontally */
+    text-align: center; /* Center the text inside the div */
+}
+
+/**************************** BAG MARKET ****************************/
+#bag-body {
+    animation: fadeIn 2s ease forwards;
+}
+
+#bag-background {
+    z-index: 1; /* Lower than other elements */
+    position: absolute; /* Ensures it covers the desired area */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%; /* Ensures it covers full height if `auto` isn't effective */
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+#display-container {
+    position: absolute; /* Correct */
+    z-index: 1000; /* High enough to float above most elements */
+    top: 50%; /* Adjust 'top' as needed to position it visibly */
+    right: 0px;
+    display: inline;
+}
+
+#display-weapon-container img {
+    width: 50%;
+    height: auto;
+}
+
+
+#weapon-container {
+    position: absolute; /* Correct */
+    height: 80%;  /* Or whatever height suits your layout */
+    overflow-y: auto;  /* Enables vertical scrolling when necessary */
+    z-index: 1000; /* High enough to float above most elements */
+    top: 100px; /* Adjust 'top' as needed to position it visibly */
+    right: 10%; /* Adjust 'right' to keep it away from the right edge, if needed */
+    margin-right: 33%; /* Might need adjustment depending on overall layout */
+}
+
+#display-weapon-container {
+    position: fixed; /* Changed from absolute to fixed to keep it in view */
+    left: 83%; /* Align to the right edge of the viewport */
+    top: 30%; /* Align to the top of the viewport */
+    width: 20%; /* Adjust the width as needed */
+    z-index: 1000;
+    height: auto; /* Full height of the viewport */
+    overflow-y: auto; /* Allows scrolling within the container */
+    padding: 0px; /* Adds padding inside the container */
+     
+}
+
+
+.float-above {
+    position: relative;
+    z-index: 1000;
+}
+
+.weapon-button {
+    position: relative;
+    z-index: 1001; /* Ensure it's above its container if needed */
+    border: none;
+    /* background: rgba(255, 255, 255, 1); Semi-transparent white background for better visibility */
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+    margin: 5px;
+    width: 120px; /* Fixed width for alignment */
+    border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+
+.image-container {
+    position: relative;
+    display: block;
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+.image-container .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Darker for better contrast */
+    color: bisque;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 20px; /* Ensure readability */
+    font-family: mainFont;
+}
+
+
+.weapon-button:hover .image-container img {
+    filter: brightness(50%);
+}
+
+.weapon-button:hover .overlay {
+    opacity: 1;
+}
+
+.weapon-stats {
+    text-align: center;
+    font-size: 20px;
+    padding: 5px 0;
+    color: rgb(157, 141, 121); 
+    font-family: mainFont;
+}
+
+#display-character-container {
+    position: fixed; /* Changed from absolute to fixed to keep it in view */
+    right: 15%; /* Align to the right edge of the viewport */
+    top: 20%; /* Align to the top of the viewport */
+    width: 20%; /* Adjust the width as needed */
+    color: bisque; /* Ensures text color is white */
+    z-index: 1002; /* Ensure it's above other content */
+    padding: 0px;
+}
+
+
+#character-dropdown {
+    padding: 10px;
+    color: black;
+    position: absolute;  
+    width: 200px;  
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+.dropdown-item {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* LEVEL SELECTION */
+
+#level-body {
+    animation: fadeIn 3s ease forwards;
+}
+
+.battle-container {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 5%; /* Space between buttons */
+    padding: 3%;
+    border-radius: 10px; /* Rounded corners for the container */
+}
+
+.battle-level {
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+    align-items: center; /* Center content vertically */
+    text-decoration: none; /* Remove link underlines */
+    color: bisque;
+}
+
+.battle-level img {
+    width: 150px; /* Set image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.battle-level span {
+    text-align: center; /* Center text under the image */
+    font-size: 30px; /* Font size for legibility */
+}
+
+/* BATTLE */
+
+/* BATTLE */
+#fight-container {
+    display: flex;
+    justify-content: space-around; /* Distributes space evenly around items */
+    align-items: center; /* Vertically centers items in the container */
+    margin-top: 5vh; /* Adjusts vertical position slightly */
+    padding: 20px 0; /* Gives some padding around items */
+}
+
+.display-container {
+    width: 300px; /* You might want to adjust this based on your images' sizes */
+    text-align: center; /* Centers the content inside the player and boss containers */
+}
+
+.status {
+    margin-top: 5px;
+    /* width: 100%; */
+}
+
+#hp-bar-container {
+    width: 300px;
+    height: 20px;
+    background-color: #ddd;
+    border: 1px solid #000;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#hp-bar {
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+#game-result-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+#game-result-modal div {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#info {
+    margin: 5% 35% 0 35%;
+}
+
+#display-weapon-container-2 {
+    position: fixed; /* Changed from absolute to fixed to keep it in view */
+    left: 30%; /* Align to the right edge of the viewport */
+    top: 30%; /* Align to the top of the viewport */
+    width: 20%; /* Adjust the width as needed */
+    height: auto; /* Full height of the viewport */
+    overflow-y: auto; /* Allows scrolling within the container */
+    padding: 0px; /* Adds padding inside the container */  
+}
+
+#display-weapon-container-2 img {
+    width: 50%;
+    height: auto;
+}
+

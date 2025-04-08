@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="gacha.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body id="level-body">
+    <!-- AUDIO -->
+
+    <!-- <audio id="background-music" src="resources/Music/Inventory.mp3" preload="auto"></audio> -->
+    <audio id="typing-sound" src="resources/Music/typingSfx.mp3" preload="auto"></audio>
+
+    <button type="button" onclick="play()" class='play' id="intro-audio-button">
+        <img src="./resources/Background/volume_on.png" id="volume-icon" alt="Volume">
+    </button>
+    <audio id="intro-audio" style="display: none;" loop>
+        <source src="./resources/Music/outro.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+    </audio>
+
+    <!-- GO BACK HOME -->
+    <button type="button" onclick="location.href='home.html'" id="home-icon-button">
+        <img src="resources/Background/homeicon.jpg" alt="homeicon" id="home-icon">
+    </button>
+
+    <!-- SELECT LEVEL -->
+    <div class="battle-container">
+        <a href="battle.html" class="battle-level" id="easy">
+            <img src="resources/Background/homework.png" alt="Homework Level">
+            <span>Easy - Homework</span>
+        </a>
+        <a href="battle.html" class="battle-level" id="medium">
+            <img src="resources/Background/exam.png" alt="Test Level">
+            <span>Medium - Exam</span>
+        </a>
+        <a href="battle.html" class="battle-level" id="hard">
+            <img src="resources/Background/final.png" alt="Finals Level">
+            <span>Hard - Finals</span>
+        </a>
+        <a href="battle.html" class="battle-level" id="boss">
+            <img src="resources/Background/boss.png" alt="Boss Level - Professor">
+            <span>Boss Level - Professor</span>
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            player.loadState();  // Load player state from localStorage
+            player.displayStatus();  // Update UI based on loaded data
+
+            const links = document.querySelectorAll('.battle-level');
+
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent the link from navigating immediately
+                    const difficultyLevel = this.id; // Get the id of the clicked link, which is set as the difficulty level
+                    
+                    // Store the difficulty level in local storage
+                    localStorage.setItem('selectedDifficulty', difficultyLevel);
+                    
+                    // Navigate to the battle page
+                    window.location.href = this.href;
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>

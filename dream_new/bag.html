@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="gacha.js"></script>
+    <script src="script.js" defer></script>
+    <script src="inventory.js" defer></script>
+</head>
+<body id="bag-body">
+    <!-- <video autoplay loop muted id="bag-background">
+        <source src="./resources/Background/shopbackground.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video> -->
+    <img src="resources/Background/bagbackground.png" alt="background" id="bag-background">
+
+    <!-- AUDIO -->
+
+    <!-- <audio id="background-music" src="resources/Music/Inventory.mp3" preload="auto"></audio> -->
+    <audio id="typing-sound" src="resources/Music/typingSfx.mp3" preload="auto"></audio>
+
+    <button type="button" onclick="play()" class='play' id="intro-audio-button">
+        <img src="./resources/Background/volume_on.png" id="volume-icon" alt="Volume">
+    </button>
+    <audio id="inven-audio" style="display: none;" loop>
+        <source src="./resources/Music/Bagtheme.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+    </audio>
+
+    <!-- GO BACK HOME -->
+    <button type="button" onclick="location.href='home.html'" id="home-icon-button">
+        <img src="resources/Background/homeicon.jpg" alt="homeicon" id="home-icon">
+    </button>
+
+    <!-- WEAPON DISPLAY -->
+    <div id="weapon-container">
+    </div>
+
+    <!-- DISPLAY Character and weapon-->
+    <div id="display-container">
+        <div id="display-character-container">
+            <button id="toggle-character-list">
+                <img src="resources/Background/addicon.png" alt="Add Icon" style="height: 40px; width: 40px;">  <!-- Adjust height and width as necessary -->
+            </button>
+            <div id="character-dropdown" style="display: none;">
+                <!-- Character names will be dynamically filled here -->
+            </div>
+        </div>
+        <div id="display-weapon-container"></div>
+    </div>
+    
+    <!-- PULL BUTTON -->
+    <!-- <button onclick="toggleCheckboxes()" style="color: bisque;" class="float-above">Toggle Remove</button>
+    <button onclick="removeFromInventory()" style="color: bisque;" class="float-above">Confirm Removal</button>
+     -->
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            player.loadState();  // Load player state from localStorage
+            player.displayStatus();  // Update UI based on loaded data
+            team.initialize(charactersData[4], createWeapon("Flowee", Math.floor(Math.random() * 101 + 50), Math.floor(Math.random() * 101 + 50), "resources/Weapon/flowee.png"));
+        });
+        
+
+        document.getElementById("toggle-character-list").innerHTML = `
+        <img src="resources/Background/addicon.png" alt="add icon" style="height: auto; width: 100%;">
+        `;
+    </script>
+</body>
+</html>

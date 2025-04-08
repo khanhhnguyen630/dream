@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="gacha.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body id="home-body">
+    <div class="home-container">
+        <video autoplay loop muted id="mainmenu-video">
+            <source src="./resources/Background/mainmenu.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+
+        <!-- AUDIO -->
+        <button type="button" onclick="play()" class='play' id="intro-audio-button">
+            <img src="./resources/Background/volume_on.png" id="volume-icon" alt="Volume">
+        </button>
+        <audio id="intro-audio" style="display: none;" loop>
+            <source src="./resources/Music/Main_menu_theme.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+        </audio>
+
+        <!-- BAG -->
+        <button type="button" onclick="location.href='bag.html'" class='home-icon-button' id="bag-button">
+            <img src="./resources/Background/bag.png" id="bag-icon" alt="Bag">
+        </button>
+
+        <!-- FIGHT -->
+        <button type="button" onclick="location.href='level.html'" class='home-icon-button' id="fight-button">
+            <img src="./resources/Background/fight.png" id="fight-icon" alt="Fight">
+        </button>
+
+        <!-- SHOP -->
+        <button type="button" onclick="location.href='shop.html'" class='home-icon-button' id="shop-button">
+            <img src="./resources/Background/shopbutton.png" id="shop-icon" alt="Shop">
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('intro-audio');
+            music.play();
+
+            player.loadState();  // Load player state from localStorage
+            player.displayStatus();  // Update UI based on loaded data
+        });
+    </script>
+</body>
+</html>
